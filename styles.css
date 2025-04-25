@@ -42,6 +42,23 @@
   display: flex;
   gap: 10px;
 }
+
+.navButton {
+  display: flex;
+  font-size: medium;
+  padding: 5px;
+  border: solid; 
+  color: white;
+  border-radius: 50px;
+  gap: 10px;
+  background-color: black;
+}
+
+.navButton:hover {
+  background-color: rgb(86, 86, 238);
+  transform: translateY(-5px);
+}
+
 .footerEnd {
   display: flex;
   align-items: center;
