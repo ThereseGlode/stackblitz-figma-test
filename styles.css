@@ -1,25 +1,96 @@
-*{
-  background-color: #5D93DA ;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #5D93DA;
 }
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
 }
 
-.headerNav {
+.header img {
+  width: 50px;
+}
+
+.burger-icon {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+.burger-bar {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Meny */
+.headerNav {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.headerNav.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .headerNavButton {
-  display: flex;
-  font-size: medium;
-  padding: 5px;
-  border: solid; 
+  display: block;
+  padding: 10px;
   color: white;
-  border-radius: 50px;
-  gap: 10px;
-  background-color: black;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0;
+}
+.headerNavButton:hover {
+  background-color: rgb(86, 86, 238);
+  border-radius: 5px;
+}
+
+/* Media Query for små skjermer */
+@media (max-width: 768px) {
+  .headerNav.show {
+    display: block;
+  }
+  
+  /* Burger-ikonet vises på høyre side på små skjermer */
+  .burger-icon {
+    display: flex;
+  }
+  
+  /* Endre layout på hero-seksjonen for små skjermer */
+  .heroIntro {
+    flex-direction: column-reverse;
+  }
+
+  .heroText, .heroImg {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
 }
 
 .heroSection {
@@ -28,10 +99,9 @@
   align-items: center;
 }
 
-
 .heroIntro {
   display: flex;
-  flex-direction: row; /*ikke nødvendig men gir et viuelt hjelp i inspect*/
+  flex-direction: row; /*ikke nødvendig men gir et visuelt hjelp i inspect*/
 }
 
 .heroText {
@@ -79,8 +149,7 @@
   gap: 10px;
 }
 
-/* Media Query */
-
+/* Media Query for små skjermer */
 @media (max-width: 425px) {
   .heroIntro {
     flex-direction: column-reverse;
